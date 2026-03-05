@@ -7,7 +7,22 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brasil Colônia • Aula Ultra Visual • VERSÃO FINAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <style>
+    :root {
+      --primary: #C8B494;
+      /* Beige Wix */
+      --bg-dark: #000000;
+      --bg-light: #F4F1ED;
+      --text-dark: #1E1E1E;
+      --text-light: #FFFFFF;
+      --gray: #64748b;
+    }
+
     *,
     *::before,
     *::after {
@@ -18,10 +33,11 @@
 
     html,
     body {
-      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-      background: #020617;
-      color: #e2e8f0;
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
 
     /* ── SEÇÕES ── */
@@ -40,45 +56,38 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 60px;
-      background: rgba(2, 6, 23, 0.98);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      height: 80px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 12px;
       z-index: 9999;
-      padding: 0 12px;
-      flex-wrap: wrap;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      padding: 0 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-btn {
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      background: rgba(255, 255, 255, 0.06);
-      color: #94a3b8;
-      font-size: 13px;
-      font-weight: 700;
+      padding: 10px 20px;
+      background: transparent;
+      color: var(--text-light);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid transparent;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      white-space: nowrap;
+      transition: all 0.3s;
     }
 
     .nav-btn:hover {
-      background: rgba(255, 255, 255, 0.14);
-      color: #e2e8f0;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      color: var(--primary);
     }
 
     .nav-btn.active {
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      color: #fff;
-      border-color: transparent;
-      box-shadow: 0 4px 16px rgba(139, 92, 246, 0.5);
+      border-bottom: 2px solid var(--primary);
+      color: var(--primary);
     }
 
     .content {
@@ -153,87 +162,42 @@
       }
     }
 
-    .hub-card {
-      border-radius: 20px;
-      padding: 28px 24px 24px;
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      cursor: pointer;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 0.6s ease backwards;
-    }
-
-    .hub-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .hub-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .hub-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .hub-card:nth-child(4) {
-      animation-delay: 0.4s;
-    }
-
-    .hub-card:nth-child(5) {
-      animation-delay: 0.5s;
-    }
-
-    .hub-card:nth-child(6) {
-      animation-delay: 0.6s;
-    }
-
-    .hub-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent);
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-
-    .hub-card:hover::before {
-      opacity: 1;
-    }
-
-    .hub-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(139, 92, 246, 0.3);
-    }
-
     .hc1 {
-      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .hc2 {
-      background: linear-gradient(135deg, #14532d, #0f172a);
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .hc3 {
-      background: linear-gradient(135deg, #4c1d95, #0f172a);
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .hc4 {
-      background: linear-gradient(135deg, #881337, #0f172a);
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .hc5 {
-      background: linear-gradient(135deg, #78350f, #0f172a);
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .hc6 {
-      background: linear-gradient(135deg, #0c4a6e, #0f172a);
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
     }
 
     .card-emoji {
@@ -299,13 +263,12 @@
 
     .mapa-title {
       text-align: center;
-      font-size: 52px;
-      font-weight: 900;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
+      font-size: 56px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--text-light);
     }
 
     .mapa-subtitle {
@@ -640,48 +603,43 @@
       color: #a78bfa;
     }
 
-    .node-onde .mapa-node-content li::before {
-      color: #8b5cf6;
+    /* SLIDE UPGRADE */
+    .slide-h2 {
+      font-size: 72px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--primary);
     }
 
-    .node-ideias {
-      border-color: #ec4899;
+    .chart-box {
+      transform: scale(1.4);
+      margin: 80px 0;
+      border: 1px solid rgba(200, 180, 148, 0.3);
+      background: transparent;
     }
 
-    .node-ideias .mapa-node-title {
-      color: #f472b6;
+    .bar {
+      background: var(--primary);
     }
 
-    .node-ideias .mapa-node-content li::before {
-      color: #ec4899;
+    /* GABARITO WIX */
+    #atividades {
+      background: var(--bg-dark);
     }
 
-    /* POSITIONING */
-    .node-objetivo {
-      grid-column: 1;
-      grid-row: 1;
+    .g-wix {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      padding: 80px 40px;
+      border: 1px solid var(--primary);
+      margin-top: 50px;
     }
 
-    .node-como {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    .node-orcamento {
-      grid-column: 1;
-      grid-row: 3;
-    }
-
-    .node-ideias {
-      grid-column: 1;
-      grid-row: 3;
-      align-self: end;
-      margin-top: -190px;
-    }
-
-    .node-onde {
-      grid-column: 2;
-      grid-row: 3;
+    .g-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      font-size: 16px;
     }
 
     /* ── SLIDES ULTRA VISUAIS COM ANIMAÇÃO ── */
@@ -1255,13 +1213,13 @@
 
   <!-- NAV FIXO -->
   <nav class="navbar">
-    <button class="nav-btn active" onclick="go(&#39;hub&#39;)">🏠 Hub</button>
-    <button class="nav-btn" onclick="go(&#39;mapa&#39;)">🧠 Mapa Mental</button>
-    <button class="nav-btn" onclick="go(&#39;slides&#39;)">📽️ Slides</button>
-    <button class="nav-btn" onclick="go(&#39;roteiro&#39;)">🎙️ Roteiro</button>
-    <button class="nav-btn" onclick="go(&#39;atividades&#39;)">✏️ Atividades</button>
-    <button class="nav-btn" onclick="go(&#39;quiz&#39;)">🎯 Quiz</button>
-    <button class="nav-btn" onclick="go(&#39;plano&#39;)">📋 Plano</button>
+    <button class="nav-btn active" onclick="go('hub')">🏠 Hub</button>
+    <button class="nav-btn" onclick="go('mapa')">🧠 Mapa Mental</button>
+    <button class="nav-btn" onclick="go('slides')">📽️ Slides</button>
+    <button class="nav-btn" onclick="go('roteiro')">🎙️ Roteiro</button>
+    <button class="nav-btn" onclick="go('atividades')">✏️ Atividades</button>
+    <button class="nav-btn" onclick="go('quiz')">🎯 Quiz</button>
+    <button class="nav-btn" onclick="go('plano')">📋 Plano</button>
   </nav>
 
   <!-- ════════════════════════════════════ HUB ════════════════════════════════════ -->
@@ -1273,42 +1231,42 @@
       </div>
       <div class="hub-grid">
 
-        <div class="hub-card hc1" onclick="go(&#39;mapa&#39;)">
+        <div class="hub-card hc1" onclick="go('mapa')">
           <div class="card-emoji">🧠</div>
           <div class="card-title">Mapa Mental Estratégico</div>
           <div class="card-desc">Layout visual moderno com animações e cards interativos.</div>
           <button class="open-btn">🔗 Abrir mapa mental</button>
         </div>
 
-        <div class="hub-card hc2" onclick="go(&#39;slides&#39;)">
+        <div class="hub-card hc2" onclick="go('slides')">
           <div class="card-emoji">📽️</div>
           <div class="card-title">Slides Ultra Visuais</div>
           <div class="card-desc">11 slides com IMAGENS REAIS + animações suaves nos bullets.</div>
           <button class="open-btn">🔗 Abrir slides</button>
         </div>
 
-        <div class="hub-card hc3" onclick="go(&#39;roteiro&#39;)">
+        <div class="hub-card hc3" onclick="go('roteiro')">
           <div class="card-emoji">🎙️</div>
           <div class="card-title">Roteiro de Vídeo</div>
           <div class="card-desc">Script completo estilo YouTube com falas para cada slide.</div>
           <button class="open-btn">🔗 Abrir roteiro</button>
         </div>
 
-        <div class="hub-card hc4" onclick="go(&#39;atividades&#39;)">
+        <div class="hub-card hc4" onclick="go('atividades')">
           <div class="card-emoji">✏️</div>
           <div class="card-title">Atividades Alinhadas</div>
           <div class="card-desc">20 questões CONECTADAS aos slides + galeria expandida + gabarito.</div>
           <button class="open-btn">🔗 Abrir atividades</button>
         </div>
 
-        <div class="hub-card hc6" onclick="go(&#39;quiz&#39;)">
+        <div class="hub-card hc6" onclick="go('quiz')">
           <div class="card-emoji">🎯</div>
           <div class="card-title">Quiz Interativo</div>
           <div class="card-desc">10 múltipla escolha + 2 abertas com feedback automático.</div>
           <button class="open-btn">🔗 Abrir quiz</button>
         </div>
 
-        <div class="hub-card hc5" onclick="go(&#39;plano&#39;)">
+        <div class="hub-card hc5" onclick="go('plano')">
           <div class="card-emoji">📋</div>
           <div class="card-title">Plano de Aula BNCC</div>
           <div class="card-desc">Habilidades, competências, metodologia e avaliação.</div>
@@ -1461,7 +1419,7 @@
       <!-- SLIDE 3 -->
       <div class="slide-frame">
         <div class="slide-bg"
-          style="background-image: url(&#39;https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e6da4d3b31b36f278e2402f37a526c9dbfced23b.jpg&#39;);">
+          style="background-image: url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e6da4d3b31b36f278e2402f37a526c9dbfced23b.jpg');">
         </div>
         <div class="slide-content">
           <div class="slide-h2">🌳 Pau-Brasil: O Primeiro ROUBO</div>
@@ -1477,7 +1435,7 @@
       <!-- SLIDE 4 -->
       <div class="slide-frame">
         <div class="slide-bg"
-          style="background-image: url(&#39;https://pplx-res.cloudinary.com/image/upload/pplx_search_images/207cfd65b87c9a2c0d49db6d08490d9d91e6d63c.jpg&#39;);">
+          style="background-image: url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/207cfd65b87c9a2c0d49db6d08490d9d91e6d63c.jpg');">
         </div>
         <div class="slide-content">
           <div class="slide-h2">🌾 Açúcar: A MÁQUINA DE DINHEIRO</div>
@@ -1493,7 +1451,7 @@
       <!-- SLIDE 5 -->
       <div class="slide-frame">
         <div class="slide-bg"
-          style="background-image: url(&#39;https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c7479bb1c91f72a67fc04a8577491e496effc810.jpg&#39;);">
+          style="background-image: url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c7479bb1c91f72a67fc04a8577491e496effc810.jpg');">
         </div>
         <div class="slide-content">
           <div class="slide-h2">🐂 Gado: O Brasil Foi PRA DENTRO</div>
@@ -1509,7 +1467,7 @@
       <!-- SLIDE 6 -->
       <div class="slide-frame">
         <div class="slide-bg"
-          style="background-image: url(&#39;https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e54154a1e82475ecb1c080e77dbb2a9b84b1c67f.jpg&#39;);">
+          style="background-image: url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e54154a1e82475ecb1c080e77dbb2a9b84b1c67f.jpg');">
         </div>
         <div class="slide-content">
           <div class="slide-h2">⚒️ Ouro: A CORRIDA QUE MUDOU TUDO</div>
@@ -1525,7 +1483,7 @@
       <!-- SLIDE 7 -->
       <div class="slide-frame">
         <div class="slide-bg"
-          style="background-image: url(&#39;https://pplx-res.cloudinary.com/image/upload/pplx_search_images/be29209bc5f7273262e3c8e6801ccaf29887ff69.jpg&#39;);">
+          style="background-image: url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/be29209bc5f7273262e3c8e6801ccaf29887ff69.jpg');">
         </div>
         <div class="slide-content">
           <div class="slide-h2">🌿 Amazônia: O Tesouro Escondido</div>
@@ -1558,7 +1516,7 @@
       <!-- SLIDE 9 -->
       <div class="slide-frame">
         <div class="slide-bg"
-          style="background-image: url(&#39;https://pplx-res.cloudinary.com/image/upload/pplx_search_images/1f7053e5d2f687d691bb2902d3cb77bb152c01e5.jpg&#39;);">
+          style="background-image: url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/1f7053e5d2f687d691bb2902d3cb77bb152c01e5.jpg');">
         </div>
         <div class="slide-content">
           <div class="slide-h2">🏙️ O Que SOBROU da Colônia?</div>
@@ -1769,48 +1727,39 @@
         </div>
 
         <div class="questao">
-          <div class="questao-titulo">21. Análise de Dados: Boom do Açúcar [SLIDE 11]</div>
+          <div class="questao-titulo">11. Análise de Dados: Boom do Açúcar [SLIDE 11]</div>
           <div class="questao-texto">Observe o gráfico do Slide 11. Qual foi o crescimento aproximado em número de
             engenhos entre 1570 e 1620? Por que esse período é chamado de "Boom"?</div>
-          <div class="questao-dica">💡 Compare os valores 60 e 190+ no gráfico.</div>
         </div>
 
         <div class="questao">
-          <div class="questao-titulo">22. Demografia Colonial [SLIDE 12]</div>
+          <div class="questao-titulo">12. Demografia Colonial [SLIDE 12]</div>
           <div class="questao-texto">Com base no gráfico de pizza do Slide 12, qual era a porcentagem estimada de
             pessoas escravizadas na colônia em 1750? O que esse dado revela sobre a estrutura econômica da época?</div>
-          <div class="questao-dica">💡 Veja a cor azul vs lilás no gráfico.</div>
         </div>
 
         <div class="questao">
-          <div class="questao-titulo">23. Comparativo de Riqueza [SLIDE 13]</div>
+          <div class="questao-titulo">13. Comparativo de Riqueza [SLIDE 13]</div>
           <div class="questao-texto">Explique por que, apesar do pico intenso da mineração, o açúcar ainda é considerado
             a atividade que rendeu mais lucros totais para Portugal a longo prazo.</div>
-          <div class="questao-dica">💡 Releia os bullets do Slide 13 sobre a duração dos ciclos.</div>
         </div>
 
-        <div class="gabarito">
-          <h2>📝 Gabarito Comentado</h2>
-
-          <div class="g-item"><strong>1.</strong> A madeira continha tinta vermelha usada para tingir tecidos de luxo na
-            Europa (Slide 3).</div>
-          <div class="g-item"><strong>2.</strong> Latifúndio (grandes propriedades), monocultura (cultivo único),
-            escravidão (trabalho forçado) - Slide 4.</div>
-          <div class="g-item"><strong>3.</strong> A criação de gado se expandiu pelo sertão, levando pessoas e formando
-            povoados (Slide 5).</div>
-          <div class="g-item"><strong>4.</strong> "PARARAM NO TEMPO" e viraram patrimônio. Exemplos: Ouro Preto, Mariana
-            (Slide 6).</div>
-          <div class="g-item"><strong>5.</strong> Eram exploradas "PELOS RIOS da Amazônia" (Slide 7).</div>
-          <div class="g-item"><strong>21.</strong> O número saltou de 60 para mais de 190 engenhos, quase triplicando a
-            produção em 50 anos (Slide 11).</div>
-          <div class="g-item"><strong>22.</strong> Cerca de 60%. Revela que a economia dependia inteiramente do trabalho
-            forçado para funcionar (Slide 12).</div>
-          <div class="g-item"><strong>23.</strong> Porque o ciclo do açúcar durou mais de 200 anos, enquanto o ouro teve
-            seu ápice por apenas cerca de 70 anos (Slide 13).</div>
-          <!-- [GABARITO 6-20 CONTINUA] -->
+        <div class="g-wix">
+          <h2 style="color: var(--text-dark); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px;">📝
+            Gabarito Premium</h2>
+          <div class="g-list">
+            <div class="g-item"><strong>1.</strong> Tinta vermelha para tecidos de luxo (Slide 3).</div>
+            <div class="g-item"><strong>2.</strong> Latifúndio + Escravidão + Monocultura (Slide 4).</div>
+            <div class="g-item"><strong>3.</strong> O Gado ocupou o interior (Slide 5).</div>
+            <div class="g-item"><strong>11.</strong> Salto de 60 para 190+ engenhos (Slide 11).</div>
+            <div class="g-item"><strong>12.</strong> 60% da população era escravizada em 1750 (Slide 12).</div>
+            <div class="g-item"><strong>13.</strong> O ciclo do açúcar durou muito mais tempo que o ouro (Slide 13).
+            </div>
+          </div>
+          <button class="print-btn"
+            style="background: var(--primary); color: #fff; border: none; padding: 15px 30px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px;"
+            onclick="window.print()">🖨️ Imprimir Arquivo</button>
         </div>
-
-        <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
       </div>
     </div>
   </section>
